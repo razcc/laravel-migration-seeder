@@ -13,7 +13,7 @@ class CreateTrainsTable extends Migration
      */
     public function up()
     {
-        Schema::create('_trains', function (Blueprint $table) {
+        Schema::create('trains', function (Blueprint $table) {
             $table->id();
             $table-> string('tipologia', 5);
             $table-> smallInteger('train_number');
@@ -23,6 +23,7 @@ class CreateTrainsTable extends Migration
             $table-> tinyInteger('binario');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -32,6 +33,6 @@ class CreateTrainsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_trains');
+        Schema::dropIfExists('trains');
     }
 }

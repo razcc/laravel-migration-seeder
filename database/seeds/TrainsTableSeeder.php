@@ -25,7 +25,7 @@ class TrainsTableSeeder extends Seeder
                 'tipologia' => 'RGV',
                 'train_number' => '9816',
                 'destinazione' => 'Milano',
-                'orarioArrivo' => 'Italia',
+                'orarioArrivo' => 16.30,
                 'ritardo' => 100,
                 'binario' => 2
             ]
@@ -34,12 +34,12 @@ class TrainsTableSeeder extends Seeder
 
         foreach ($trains as $elem) {
             $newTrain = new Train();
-            $newTrain->tipologia = $elem['address'];
-            $newTrain->train_number = $elem['postal_code'];
-            $newTrain->destinazione = $elem['city'];
-            $newTrain->orarioArrivo = $elem['state'];
-            $newTrain->ritardo = $elem['square_meters'];
-            $newTrain->binario = $elem['rooms'];
+            $newTrain->tipologia = $elem['tipologia'];
+            $newTrain->train_number = $elem['train_number'];
+            $newTrain->destinazione = $elem['destinazione'];
+            $newTrain->orarioArrivo = $elem['orarioArrivo'];
+            $newTrain->ritardo = $elem['ritardo'];
+            $newTrain->binario = $elem['binario'];
             $newTrain->save();
         }
     }
